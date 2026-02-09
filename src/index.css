@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --industrial-bg-primary: #0E1114;
+    /* Deepened from #12161A to match Hero */
+    --industrial-bg-secondary: #161B21;
+    --industrial-border: #232B36;
+    --industrial-text-primary: #F3F4F6;
+    --industrial-text-secondary: #9CA3AF;
+    --industrial-accent: #0EA5E9;
+    --industrial-highlight: #F59E0B;
+  }
+
+  body {
+    background-color: var(--industrial-bg-primary);
+    color: var(--industrial-text-primary);
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--industrial-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--industrial-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--industrial-accent);
+}
