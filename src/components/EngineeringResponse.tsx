@@ -26,19 +26,17 @@ const EngineeringResponse: React.FC = () => {
                 <div className="flex flex-col lg:flex-row gap-16 items-center">
                     {/* Visual / Image Side */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6 }}
                         className="lg:w-1/2 w-full relative h-[300px] md:h-[600px] bg-[var(--industrial-bg-secondary)] overflow-hidden rounded-sm"
                     >
-                        {/* Placeholder for a high-tech valve generic image or abstract engineering shot */}
                         <div className="absolute inset-0 bg-gradient-to-br from-[var(--industrial-border)] to-[var(--industrial-bg-primary)] opacity-50" />
                         <div
-                            className="absolute inset-0 opacity-80 mix-blend-normal bg-cover bg-center transition-transform duration-1000 hover:scale-105"
-                            style={{ backgroundImage: "url('/images/text-image-rel.jpg')" }}
+                            className="absolute inset-0 opacity-80 mix-blend-normal bg-cover bg-center gpu-accelerated"
+                            style={{ backgroundImage: "url('/images/industrial-response.jpg')" }}
                         />
-                        {/* Safe Zone Gradient for Text Overlay if needed */}
                         <div className="absolute inset-0 bg-gradient-to-t from-[var(--industrial-bg-primary)]/90 via-transparent to-transparent opacity-60" />
 
                         {/* Overlay HUD */}
@@ -66,7 +64,7 @@ const EngineeringResponse: React.FC = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-4xl font-serif font-bold text-white mb-10"
+                            className="text-4xl md:text-5xl font-serif font-bold text-white mb-10"
                         >
                             Our Response to <br />
                             <span className="text-[var(--industrial-accent)]">Unforgiving Conditions.</span>
@@ -76,14 +74,14 @@ const EngineeringResponse: React.FC = () => {
                             {responses.map((item, index) => (
                                 <motion.div
                                     key={index}
-                                    initial={{ opacity: 0, x: 20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.15, duration: 0.6 }}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-50px" }}
+                                    transition={{ delay: index * 0.1, duration: 0.5 }}
                                     className="pl-6 border-l border-[var(--industrial-border)] hover:border-[var(--industrial-accent)] transition-colors duration-300"
                                 >
-                                    <h4 className="text-xl font-bold text-white mb-2">{item.title}</h4>
-                                    <p className="text-[var(--industrial-text-secondary)] mb-3 leading-relaxed">{item.desc}</p>
+                                    <h4 className="text-2xl font-bold text-white mb-2">{item.title}</h4>
+                                    <p className="text-lg text-[var(--industrial-text-secondary)] mb-3 leading-relaxed">{item.desc}</p>
                                     <div className="text-xs font-mono text-[var(--industrial-accent)] tracking-wider bg-[var(--industrial-bg-secondary)] inline-block px-2 py-1 rounded">
                                         {item.stat}
                                     </div>

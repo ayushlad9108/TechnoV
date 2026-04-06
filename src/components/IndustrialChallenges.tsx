@@ -46,12 +46,12 @@ const IndustrialChallenges: React.FC = () => {
             <div className="container mx-auto px-6 relative z-10">
                 <div className="mb-20">
                     <motion.span
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         className="text-[var(--industrial-accent)] font-mono text-sm tracking-widest uppercase mb-4 block"
                     >
-                        // Mission Critical Challenges
+                        Mission Critical Challenges
                     </motion.span>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -68,11 +68,11 @@ const IndustrialChallenges: React.FC = () => {
                     {challenges.map((challenge, index) => (
                         <motion.div
                             key={challenge.id}
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1, duration: 0.6 }}
-                            className="group relative border-t border-[var(--industrial-border)] pt-8 hover:border-[var(--industrial-accent)] transition-colors duration-500"
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ delay: index * 0.05, duration: 0.5 }}
+                            className="group relative border-t border-[var(--industrial-border)] pt-8 hover:border-[var(--industrial-accent)] transition-colors duration-500 gpu-accelerated"
                         >
                             <div className="flex justify-between items-start mb-6">
                                 <h3 className="text-3xl font-bold text-[var(--industrial-text-primary)] group-hover:text-white transition-colors">
@@ -82,10 +82,10 @@ const IndustrialChallenges: React.FC = () => {
                                     {challenge.id}
                                 </span>
                             </div>
-                            <p className="text-lg text-[var(--industrial-text-secondary)] mb-6 max-w-md leading-relaxed">
+                            <p className="text-xl text-[var(--industrial-text-secondary)] mb-6 max-w-md leading-relaxed">
                                 {challenge.description}
                             </p>
-                            <div className="inline-flex items-center gap-2 text-sm font-mono text-[var(--industrial-accent)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <div className="inline-flex items-center gap-2 text-sm font-mono text-[var(--industrial-accent)] opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 transform translate-y-1 md:group-hover:translate-y-0">
                                 <span className="w-2 h-2 bg-[var(--industrial-accent)] rounded-full animate-pulse" />
                                 {challenge.highlight}
                             </div>

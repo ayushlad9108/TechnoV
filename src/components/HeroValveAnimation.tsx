@@ -2,9 +2,6 @@ import React, { useEffect, useRef, useState, useLayoutEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring, useMotionValueEvent } from 'framer-motion';
 
 const FRAME_COUNT = 40;
-// Reduced height for faster scrub (was ~400vh/4000px)
-// 40 frames * 40px/frame = 1600px of scrollable area + viewport height. 
-// A tighter scrub feel.
 const SCROLL_HEIGHT = 2000;
 
 const HeroValveAnimation: React.FC = () => {
@@ -20,11 +17,10 @@ const HeroValveAnimation: React.FC = () => {
         offset: ["start start", "end end"]
     });
 
-    // "Near-linear" snappy spring
     const smoothProgress = useSpring(scrollYProgress, {
-        stiffness: 500, // Very stiff = fast response
-        damping: 50,   // Critical damping to avoid oscillation
-        mass: 0.2,     // Light mass = low inertia
+        stiffness: 500,
+        damping: 50,
+        mass: 0.2,
         restDelta: 0.001
     });
 
@@ -67,18 +63,16 @@ const HeroValveAnimation: React.FC = () => {
         return () => { isMounted = false; };
     }, []);
 
-    // Optimized Render Logic
     const renderFrame = (index: number) => {
         const canvas = canvasRef.current;
         if (!canvas || !images[index]) return;
 
-        const ctx = canvas.getContext('2d', { alpha: false, desynchronized: true }); // optimize
+        const ctx = canvas.getContext('2d', { alpha: false, desynchronized: true });
         if (!ctx) return;
 
         const img = images[index];
         const dpr = window.devicePixelRatio || 1;
 
-        // Cache canvas size
         const rect = canvas.getBoundingClientRect();
         const targetWidth = Math.floor(rect.width * dpr);
         const targetHeight = Math.floor(rect.height * dpr);
@@ -93,13 +87,15 @@ const HeroValveAnimation: React.FC = () => {
         const x = (rect.width / 2) - (img.width / 2) * scale;
         const y = (rect.height / 2) - (img.height / 2) * scale;
 
-        // No clearRect needed if drawing full cover + background match
         ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
     };
 
-    // Subscribe to scroll changes
     useMotionValueEvent(smoothProgress, "change", (latest) => {
         if (!loaded || !images.length) return;
+
+        const isMobile = window.innerWidth < 768;
+        if (isMobile && latest > 0.1 && latest < 0.9) return;
+
         const frameIndex = Math.min(
             FRAME_COUNT - 1,
             Math.floor(latest * (FRAME_COUNT - 1))
@@ -107,19 +103,17 @@ const HeroValveAnimation: React.FC = () => {
         requestAnimationFrame(() => renderFrame(frameIndex));
     });
 
-    // Handle Resize & Initial Draw
     useLayoutEffect(() => {
         const handleResize = () => {
             if (loaded && images[0]) renderFrame(0);
         };
-        window.addEventListener('resize', handleResize);
+        window.addEventListener('resize', handleResize, { passive: true });
         if (loaded && images[0]) renderFrame(0);
         return () => window.removeEventListener('resize', handleResize);
     }, [loaded, images]);
 
-    // Parallax & Text Animations
-    const textY = useTransform(smoothProgress, [0, 0.4], [0, 50]);
-    const textOpacity = useTransform(smoothProgress, [0, 0.25], [1, 0]);
+    const textY = useTransform(smoothProgress, [0, 0.4], [0, 20]);
+    const textOpacity = useTransform(smoothProgress, [0, 0.2], [1, 0]);
 
     return (
         <div
@@ -158,41 +152,21 @@ const HeroValveAnimation: React.FC = () => {
 
                 <canvas
                     ref={canvasRef}
-                    className="absolute inset-0 w-full h-full object-cover z-0 mix-blend-screen opacity-90"
+                    className="absolute inset-0 w-full h-full object-cover z-0 mix-blend-screen opacity-90 gpu-accelerated"
                 />
 
                 {/* Gradient Overlay for Text Readability - Smooth Blend */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[var(--industrial-bg-primary)] via-[var(--industrial-bg-primary)]/50 to-transparent pointer-events-none z-0" />
 
-                {/* HUD Elements - Ultra subtle */}
-                <div className="absolute inset-0 z-10 pointer-events-none p-6 md:p-12 flex flex-col justify-between opacity-30 mix-blend-plus-lighter">
-                    <div className="flex justify-between items-start">
-                        <div className="text-[10px] font-mono text-[var(--industrial-accent)] tracking-widest leading-relaxed">
-                            SYS.STATUS: ONLINE<br />
-                            FPS: 60.0<br />
-                            RENDER: ACTIVE
-                        </div>
-                        <div className="w-24 h-24 border-t border-r border-[var(--industrial-accent)]/20 rounded-tr-3xl" />
-                    </div>
-                    <div className="flex justify-between items-end">
-                        <div className="w-24 h-24 border-b border-l border-[var(--industrial-accent)]/20 rounded-bl-3xl" />
-                        <div className="text-[10px] font-mono text-right text-[var(--industrial-text-secondary)] tracking-widest leading-relaxed">
-                            EST. 2024<br />
-                            PRECISION MFG.<br />
-                            SECTOR 7G
-                        </div>
-                    </div>
-                </div>
-
                 {/* Hero Content */}
                 <motion.div
                     style={{ y: textY, opacity: textOpacity }}
-                    className="absolute inset-0 flex flex-col items-start justify-center text-left px-6 md:px-20 z-20 pointer-events-none"
+                    className="absolute inset-0 flex flex-col items-start justify-center text-left px-6 md:px-20 z-20 pointer-events-none gpu-accelerated"
                 >
                     <motion.div
-                        initial={{ opacity: 0, x: -50 }}
+                        initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
                         className="max-w-4xl"
                     >
                         <div className="flex items-center gap-4 mb-6 opacity-80">
@@ -212,6 +186,9 @@ const HeroValveAnimation: React.FC = () => {
                     </motion.div>
                 </motion.div>
             </div>
+
+            {/* Section Blend Utility at Bottom */}
+            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[var(--industrial-bg-primary)] to-transparent z-30 pointer-events-none" />
         </div>
     );
 };

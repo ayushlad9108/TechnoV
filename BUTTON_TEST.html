@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Click Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            background: #0E1114;
+            color: white;
+        }
+        .test-button {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background: #dc2626;
+            color: white;
+        }
+        .test-button:hover {
+            background: #b91c1c;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background: #161B21;
+            border: 1px solid #232B36;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Button Click Test</h1>
+    <p>If these buttons work, the issue is with React/routing, not basic HTML/JS</p>
+    
+    <button class="test-button" onclick="testClick1()">Test Button 1</button>
+    <button class="test-button" onclick="testClick2()">Test Button 2 (Navigate)</button>
+    <button class="test-button" onclick="testClick3()">Test Button 3 (Alert)</button>
+    
+    <div class="result" id="result">
+        Click a button to test...
+    </div>
+
+    <script>
+        function testClick1() {
+            console.log('Button 1 clicked!');
+            document.getElementById('result').innerHTML = '✅ Button 1 clicked successfully!';
+        }
+
+        function testClick2() {
+            console.log('Button 2 clicked! Attempting navigation...');
+            document.getElementById('result').innerHTML = '✅ Button 2 clicked! Navigating in 2 seconds...';
+            setTimeout(() => {
+                window.location.href = '/cart';
+            }, 2000);
+        }
+
+        function testClick3() {
+            console.log('Button 3 clicked!');
+            alert('Button 3 works!');
+            document.getElementById('result').innerHTML = '✅ Button 3 clicked and alert shown!';
+        }
+
+        // Log on page load
+        console.log('Test page loaded');
+        console.log('Buttons found:', document.querySelectorAll('.test-button').length);
+    </script>
+</body>
+</html>

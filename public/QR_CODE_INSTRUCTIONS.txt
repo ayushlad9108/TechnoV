@@ -1,0 +1,23 @@
+PAYMENT QR CODE SETUP
+=====================
+
+Place your UPI payment QR code image here as:
+payment-qr.jpg
+
+How to get your UPI QR code:
+1. Open Google Pay / PhonePe / Paytm
+2. Go to your profile or business settings
+3. Find "QR Code" or "Payment QR"
+4. Download or screenshot the QR code
+5. Save it as "payment-qr.jpg" in this folder (public/)
+
+The QR code will be displayed on the payment page when customers click "Buy Now"
+
+File requirements:
+- Filename: payment-qr.jpg (or payment-qr.jpeg)
+- Format: JPG/JPEG
+- Recommended size: 500x500 pixels or larger
+- Must be a valid UPI QR code
+
+After adding the file, the payment flow will work:
+Products → Buy Now → Payment Page (shows QR) → Customer scans & pays

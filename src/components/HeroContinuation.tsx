@@ -29,10 +29,10 @@ const HeroContinuation: React.FC = () => {
             <div className="container mx-auto px-6 relative z-10">
                 <div className="max-w-5xl mx-auto">
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
+                        initial={{ opacity: 0, y: 15 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
                     >
                         <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-[1.1] mb-8">
                             Engineered to perform where <br />
@@ -42,12 +42,12 @@ const HeroContinuation: React.FC = () => {
                         </h2>
                         <div className="flex flex-col md:flex-row gap-8 items-start border-l-2 border-[var(--industrial-accent)] pl-6 md:pl-10">
                             <p className="text-xl md:text-2xl text-[var(--industrial-text-secondary)] font-light max-w-2xl leading-relaxed">
-                                In the world's most demanding environments—from deep-sea extraction to hyper-critical processing—our precision flow control systems stand as the last line of defense.
+                                Since 2015, Techno Valves has built immense expertise supplying Ball Valves, Gate Valves, Globe Valves and more to India's most demanding industries — from power generation to chemical processing.
                             </p>
                             <div className="flex flex-col gap-2 text-sm font-mono text-[var(--industrial-text-secondary)] opacity-70 mt-2 md:mt-0">
-                                <span>PMAX: 20,000 PSI</span>
-                                <span>TEMP: -196°C / +800°C</span>
-                                <span>LIFECYCLE: 25 YRS+</span>
+                                <span>EST: 2015</span>
+                                <span>HQ: NASHIK, MH</span>
+                                <span>CLIENTS: 30+</span>
                             </div>
                         </div>
                     </motion.div>

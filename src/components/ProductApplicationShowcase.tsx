@@ -25,14 +25,14 @@ const ProductApplicationShowcase: React.FC = () => {
             <div className="container mx-auto px-6 relative z-10">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16">
                     <div>
-                        <span className="text-[var(--industrial-accent)] font-mono text-sm tracking-widest uppercase mb-2 block">
-                            // High-Performance Inventory
+                        <span className="text-[var(--industrial-accent)] font-mono text-base tracking-widest uppercase mb-2 block">
+                            High-Performance Inventory
                         </span>
                         <h2 className="text-4xl md:text-5xl font-serif font-bold text-white">
                             Engineered Solutions
                         </h2>
                     </div>
-                    <p className="text-[var(--industrial-text-secondary)] max-w-md text-right md:mt-0 mt-6">
+                    <p className="text-[var(--industrial-text-secondary)] text-lg max-w-md text-right md:mt-0 mt-6">
                         From standard high-pressure isolation to custom control solutions, we engineer valves for every critical application.
                     </p>
                 </div>
@@ -51,12 +51,12 @@ const ProductApplicationShowcase: React.FC = () => {
                         {applications.map((app, index) => (
                             <motion.div
                                 key={index}
-                                whileHover={{ scale: 1.02 }}
-                                className="relative h-64 border border-[var(--industrial-border)] group overflow-hidden cursor-pointer bg-[var(--industrial-bg-primary)]"
+                                whileHover={{ scale: 1.01 }}
+                                className="relative h-64 border border-[var(--industrial-border)] group overflow-hidden cursor-pointer bg-[var(--industrial-bg-primary)] gpu-accelerated"
                             >
                                 {/* Background Image */}
                                 <div
-                                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-60 mix-blend-overlay group-hover:opacity-80"
+                                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 md:group-hover:scale-105 opacity-60 mix-blend-overlay md:group-hover:opacity-80 gpu-accelerated"
                                     style={{ backgroundImage: `url('${app.image}')` }}
                                 />
 
