@@ -14,38 +14,16 @@ const CountUp: React.FC<{ target: number; suffix: string; started: boolean }> = 
   useEffect(() => {
     if (!started) return;
     let start = 0;
-    const duration = 2000;
-    const step = Math.ceil(target / (duration / 16));
+    const step = Math.ceil(target / (2000 / 16));
     const timer = setInterval(() => {
       start += step;
-      if (start >= target) {
-        setCount(target);
-        clearInterval(timer);
-      } else {
-        setCount(start);
-      }
+      if (start >= target) { setCount(target); clearInterval(timer); }
+      else setCount(start);
     }, 16);
     return () => clearInterval(timer);
   }, [started, target]);
 
   return <>{count}{suffix}</>;
-};
-
-const Typewriter: React.FC<{ text: string; started: boolean }> = ({ text, started }) => {
-  const [displayed, setDisplayed] = useState('');
-
-  useEffect(() => {
-    if (!started) return;
-    let i = 0;
-    const timer = setInterval(() => {
-      setDisplayed(text.slice(0, i + 1));
-      i++;
-      if (i >= text.length) clearInterval(timer);
-    }, 120);
-    return () => clearInterval(timer);
-  }, [started, text]);
-
-  return <>{displayed}<span className="animate-pulse">|</span></>;
 };
 
 const ProofTrust: React.FC = () => {
