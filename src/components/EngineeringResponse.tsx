@@ -1,98 +1,97 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useRef } from 'react';
 
 const responses = [
-    {
-        title: "Precision Machining",
-        desc: "Manufacturing to micron-level tolerances using 5-axis CNC technology, ensuring perfect component mating and seal integrity.",
-        stat: "±0.005mm TOLERANCE"
-    },
-    {
-        title: "Advanced Metallurgy",
-        desc: "Utilizing Inconel, Hastelloy, and Duplex Stainless Steels to resist hydrogen embrittlement and chloride stress corrosion.",
-        stat: "NACE MR0175 COMPLIANT"
-    },
-    {
-        title: "Rigorous Testing",
-        desc: "Every valve undergoes hydrostatic, pneumatic, and fugitive emission testing beyond industry standards before shipment.",
-        stat: "100% INSPECTION RATE"
-    }
+  { title: 'Precision Machining', desc: 'Manufacturing to micron-level tolerances using 5-axis CNC technology, ensuring perfect component mating and seal integrity.', stat: '±0.005mm TOLERANCE' },
+  { title: 'Advanced Metallurgy', desc: 'Utilizing Inconel, Hastelloy, and Duplex Stainless Steels to resist hydrogen embrittlement and chloride stress corrosion.', stat: 'NACE MR0175 COMPLIANT' },
+  { title: 'Rigorous Testing',    desc: 'Every valve undergoes hydrostatic, pneumatic, and fugitive emission testing beyond industry standards before shipment.', stat: '100% INSPECTION RATE' },
 ];
 
 const EngineeringResponse: React.FC = () => {
-    return (
-        <section className="py-24 bg-[var(--industrial-bg-primary)] border-y border-[var(--industrial-border)] relative">
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="flex flex-col lg:flex-row gap-16 items-center">
-                    {/* Visual / Image Side */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.6 }}
-                        className="lg:w-1/2 w-full relative h-[300px] md:h-[600px] bg-[var(--industrial-bg-secondary)] overflow-hidden rounded-sm"
-                    >
-                        <div className="absolute inset-0 bg-gradient-to-br from-[var(--industrial-border)] to-[var(--industrial-bg-primary)] opacity-50" />
-                        <div
-                            className="absolute inset-0 opacity-80 mix-blend-normal bg-cover bg-center gpu-accelerated"
-                            style={{ backgroundImage: "url('/images/industrial-response.jpg')" }}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[var(--industrial-bg-primary)]/90 via-transparent to-transparent opacity-60" />
+  const ref = useRef<HTMLElement>(null);
 
-                        {/* Overlay HUD */}
-                        <div className="absolute inset-0 p-8 flex flex-col justify-between z-10 pointer-events-none">
-                            <div className="flex justify-between border-b border-white/10 pb-4">
-                                <span className="text-xs font-mono text-[var(--industrial-accent)]">ENG.RESPONSE_MODULE</span>
-                                <span className="text-xs font-mono text-white/50">SEC.03</span>
-                            </div>
-                            <div className="grid grid-cols-2 gap-4">
-                                <div className="border border-white/10 p-4 bg-black/20 backdrop-blur-sm">
-                                    <div className="text-xs text-white/50 mb-1">STRESS TEST</div>
-                                    <div className="text-xl text-white font-mono">PASS</div>
-                                </div>
-                                <div className="border border-white/10 p-4 bg-black/20 backdrop-blur-sm">
-                                    <div className="text-xs text-white/50 mb-1">MATERIAL</div>
-                                    <div className="text-xl text-white font-mono">316L SS</div>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
+  return (
+    <section
+      ref={ref}
+      className="relative overflow-hidden"
+      style={{ background: 'var(--industrial-bg-primary)' }}
+    >
+      <div className="flex flex-col lg:flex-row">
 
-                    {/* Content Side */}
-                    <div className="lg:w-1/2 w-full">
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="text-4xl md:text-5xl font-serif font-bold text-white mb-10"
-                        >
-                            Our Response to <br />
-                            <span className="text-[var(--industrial-accent)]">Unforgiving Conditions.</span>
-                        </motion.h2>
+        {/* ── Left: image panel ── */}
+        <div
+          className="lg:w-1/2 flex items-center justify-center p-8 lg:p-12"
+          style={{ background: 'var(--industrial-bg-primary)' }}
+        >
+          <motion.img
+            src="/images/valve-response.png"
+            alt="Industrial Valves"
+            initial={{ opacity: 0, scale: 0.97 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="w-full h-auto object-contain rounded-sm"
+            style={{ maxHeight: '480px' }}
+          />
+        </div>
 
-                        <div className="space-y-12">
-                            {responses.map((item, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, y: 10 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true, margin: "-50px" }}
-                                    transition={{ delay: index * 0.1, duration: 0.5 }}
-                                    className="pl-6 border-l border-[var(--industrial-border)] hover:border-[var(--industrial-accent)] transition-colors duration-300"
-                                >
-                                    <h4 className="text-2xl font-bold text-white mb-2">{item.title}</h4>
-                                    <p className="text-lg text-[var(--industrial-text-secondary)] mb-3 leading-relaxed">{item.desc}</p>
-                                    <div className="text-xs font-mono text-[var(--industrial-accent)] tracking-wider bg-[var(--industrial-bg-secondary)] inline-block px-2 py-1 rounded">
-                                        {item.stat}
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
+        {/* ── Right: content panel ── */}
+        <div
+          className="lg:w-1/2 flex items-center px-8 lg:px-14 py-16 lg:py-24"
+          style={{ background: 'var(--industrial-bg-primary)' }}
+        >
+          <div className="w-full max-w-lg">
+
+            {/* Heading */}
+            <motion.h2
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              className="font-display font-bold mb-10 leading-tight"
+              style={{ color: 'var(--industrial-text-primary)', fontSize: 'clamp(1.5rem, 2.8vw, 2.2rem)' }}
+            >
+              Our Response to
+              <br />
+              <span style={{ color: 'var(--industrial-accent)' }}>Unforgiving Conditions.</span>
+            </motion.h2>
+
+            {/* Response items */}
+            <div className="space-y-8">
+              {responses.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 24 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ duration: 0.55, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  className="group pl-5 border-l-2 transition-colors duration-300"
+                  style={{ borderColor: 'var(--industrial-border)' }}
+                  onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--industrial-accent)')}
+                  onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--industrial-border)')}
+                >
+                  <h4 className="text-base font-bold mb-1.5" style={{ color: 'var(--industrial-text-primary)' }}>
+                    {item.title}
+                  </h4>
+                  <p className="text-sm leading-relaxed mb-2.5" style={{ color: 'var(--industrial-text-secondary)' }}>
+                    {item.desc}
+                  </p>
+                  <span
+                    className="text-[10px] font-mono tracking-wider px-2 py-0.5 rounded"
+                    style={{ color: 'var(--industrial-accent)', background: 'var(--industrial-bg-secondary)' }}
+                  >
+                    {item.stat}
+                  </span>
+                </motion.div>
+              ))}
             </div>
-        </section>
-    );
+
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default EngineeringResponse;

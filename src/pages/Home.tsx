@@ -1,4 +1,4 @@
-import HeroValveAnimation from '../components/HeroValveAnimation';
+import HeroVideo from '../components/HeroVideo';
 import HeroContinuation from '../components/HeroContinuation';
 import IndustrialChallenges from '../components/IndustrialChallenges';
 import EngineeringResponse from '../components/EngineeringResponse';
@@ -12,7 +12,7 @@ import IndustrialCTA from '../components/IndustrialCTA';
 export default function Home() {
   return (
     <>
-      <HeroValveAnimation />
+      <HeroVideo />
       <HeroContinuation />
       <IndustrialChallenges />
       <EngineeringResponse />

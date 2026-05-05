@@ -13,13 +13,13 @@ export default function About() {
           className="mb-16 text-center"
         >
           <span className="text-[var(--industrial-accent)] font-mono text-sm tracking-widest uppercase mb-4 block">
-            Est. 2015 — Nashik, Maharashtra
+            Est. 1985 — Satpur MIDC, Nashik, Maharashtra
           </span>
-          <h1 className="text-5xl md:text-6xl font-serif font-bold text-white mb-6 leading-tight">
+          <h1 className="text-5xl md:text-6xl font-serif font-bold text-[var(--industrial-text-primary)] mb-6 leading-tight">
             About <span className="text-[var(--industrial-accent)]">Techno Valves</span>
           </h1>
           <p className="text-xl text-[var(--industrial-text-secondary)] max-w-3xl mx-auto leading-relaxed">
-            A leading supplier and trader of high-performance industrial valves, serving India's most critical industries since 2015.
+            A precision-driven industrial valve manufacturing company, serving India's most critical industries since 1985.
           </p>
         </motion.div>
 
@@ -34,7 +34,7 @@ export default function About() {
             <video
               className="w-full h-full object-cover"
               controls
-              poster="/images/industrial-bridge.jpg"
+              poster="/logo.png"
             >
               <source src="/TechnoValves.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -53,16 +53,16 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl font-serif font-bold text-white mb-6">Who We Are</h2>
+            <h2 className="text-3xl font-serif font-bold text-[var(--industrial-text-primary)] mb-6">Who We Are</h2>
             <div className="space-y-4 text-lg text-[var(--industrial-text-secondary)] leading-relaxed">
               <p>
-                Established in 2015, Techno Valves has gained immense expertise in supplying and trading of Ball Valves, Industrial Ball Valves, Gate Valves, Globe Valves and a wide range of industrial flow control products.
+                Established on 1st August 1985, Techno Valves is a precision-driven industrial valve manufacturing company based in Satpur MIDC, Nashik, Maharashtra. With over three decades of engineering experience, we specialize in manufacturing reliable and high-performance flow control solutions for diverse process industries.
               </p>
               <p>
-                Located in Nashik, Maharashtra, we are one of the leading sellers of industrial valves in India, trusted by over 30 prestigious clients including BHEL, NTPC, TATA, Larsen & Toubro, MAHAGENCO and many more.
+                Our core product range includes Ball Valves, Gate Valves, Globe Valves, and Non-Return Valves (NRV) — built on strong engineering fundamentals and strict quality control practices, designed to deliver durability, operational safety, and consistent performance in demanding industrial environments.
               </p>
               <p>
-                Our products are exported to UAE, Saudi Arabia, United Kingdom, United States, Singapore, Australia and South Africa.
+                Our products are exported to Uzbekistan, Philippines, Bangladesh, Saudi Arabia, Sri Lanka, and Oman.
               </p>
             </div>
           </motion.div>
@@ -75,16 +75,16 @@ export default function About() {
             className="space-y-6"
           >
             {[
-              { label: 'Established',   value: '2015' },
-              { label: 'Headquarters',  value: 'Nashik, Maharashtra, India' },
-              { label: 'Specialisation', value: 'Ball, Gate & Globe Valves' },
-              { label: 'Clients',       value: '30+ Prestigious Companies' },
-              { label: 'Export Markets', value: '8+ Countries Worldwide' },
+              { label: 'Established',   value: '1st August 1985' },
+              { label: 'Headquarters',  value: 'Satpur MIDC, Nashik, Maharashtra, India' },
+              { label: 'Specialisation', value: 'Ball, Gate, Globe & NRV Valves' },
+              { label: 'Clients',       value: '150+ Prestigious Companies' },
+              { label: 'Export Markets', value: 'Uzbekistan, Philippines, Bangladesh, Saudi Arabia, Sri Lanka, Oman' },
               { label: 'Certification', value: 'ISO 9001:2015' },
             ].map((item) => (
               <div key={item.label} className="flex justify-between items-start border-b border-[var(--industrial-border)] pb-4">
                 <span className="text-sm font-mono text-[var(--industrial-accent)] uppercase tracking-wider">{item.label}</span>
-                <span className="text-base font-semibold text-white text-right max-w-xs">{item.value}</span>
+                <span className="text-base font-semibold text-[var(--industrial-text-primary)] text-right max-w-xs">{item.value}</span>
               </div>
             ))}
           </motion.div>
@@ -98,9 +98,9 @@ export default function About() {
           className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[var(--industrial-border)] border border-[var(--industrial-border)]"
         >
           {[
-            { value: '10+', label: 'Years Experience' },
-            { value: '30+', label: 'Prestigious Clients' },
-            { value: '8+',  label: 'Export Countries' },
+            { value: '40+', label: 'Years Experience' },
+            { value: '150+', label: 'Prestigious Clients' },
+            { value: '6+',  label: 'Export Countries' },
             { value: 'ISO', label: '9001:2015 Certified' },
           ].map((stat) => (
             <div key={stat.label} className="bg-[var(--industrial-bg-secondary)] p-10 text-center">
@@ -111,6 +111,7 @@ export default function About() {
         </motion.div>
 
       </div>
+
     </div>
   );
 }

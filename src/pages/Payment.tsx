@@ -51,7 +51,7 @@ export default function Payment() {
     // 1. Create Razorpay order on server
     let orderId: string;
     try {
-      const res = await fetch('import.meta.env.VITE_API_URL/api/create-razorpay-order', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/create-razorpay-order`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -85,7 +85,7 @@ export default function Payment() {
       handler: async (response: any) => {
         // 3. Verify signature on server
         try {
-          const verifyRes = await fetch('import.meta.env.VITE_API_URL/api/verify-payment', {
+          const verifyRes = await fetch(`${import.meta.env.VITE_API_URL}/api/verify-payment`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

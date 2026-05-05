@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useInView } from 'framer-motion';
 
 const stats = [
-  { value: 10, suffix: '+', label: 'YEARS EXPERIENCE', isNumber: true },
-  { value: 30, suffix: '+', label: 'PRESTIGIOUS CLIENTS', isNumber: true },
+  { value: 40, suffix: '+', label: 'YEARS EXPERIENCE', isNumber: true },
+  { value: 150, suffix: '+', label: 'PRESTIGIOUS CLIENTS', isNumber: true },
   { value: 500, suffix: '+', label: 'PROJECTS DELIVERED', isNumber: true },
   { value: 'ISO', suffix: '', label: '9001:2015 CERTIFIED', isNumber: false },
 ];
@@ -36,7 +36,7 @@ const ProofTrust: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-[var(--industrial-border)]/30">
           {stats.map((stat, index) => (
             <div key={index} className="flex flex-col items-center">
-              <span className="text-4xl md:text-5xl font-bold text-white mb-2 font-mono">
+              <span className="text-4xl md:text-5xl font-bold mb-2 font-mono" style={{ color: 'var(--industrial-text-primary)' }}>
                 {stat.isNumber
                   ? <CountUp target={stat.value as number} suffix={stat.suffix} started={inView} />
                   : <>{stat.value}</>

@@ -86,9 +86,9 @@ export default function Bill() {
                 <h2 className="text-3xl font-bold text-gray-900 mb-2">
                   TECHNOVALVES
                 </h2>
-                <p className="text-sm text-gray-600">Industrial Valve Solutions</p>
-                <p className="text-sm text-gray-600">Industrial Area, Sector 5</p>
-                <p className="text-sm text-gray-600">Mumbai, Maharashtra 400001</p>
+                <p className="text-sm text-gray-600">Industrial Valve Manufacturing</p>
+                <p className="text-sm text-gray-600">Satpur MIDC, Nashik</p>
+                <p className="text-sm text-gray-600">Maharashtra, India — 422007</p>
                 <p className="text-sm text-gray-600">GST: 27XXXXX1234X1ZX</p>
               </div>
               <div className="text-right">
@@ -203,7 +203,7 @@ export default function Bill() {
           {/* Footer */}
           <div className="text-center text-sm text-gray-600 border-t border-gray-300 pt-4">
             <p className="mb-2">Thank you for your business!</p>
-            <p>For any queries, contact us at info@technovalves.com or +91 22 1234 5678</p>
+            <p>For any queries, contact us at business@technovalves.org or +91 87882 80766</p>
           </div>
         </motion.div>
 

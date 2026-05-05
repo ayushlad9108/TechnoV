@@ -32,7 +32,7 @@ export default function Contact() {
       `Company: ${formData.company}\n\n` +
       `Message:\n${formData.message}`
     );
-    window.location.href = `mailto:info@technovalves.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:business@technovalves.org?subject=${subject}&body=${body}`;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -46,17 +46,17 @@ export default function Contact() {
     {
       icon: '📍',
       title: 'Address',
-      details: ['Techno Valves', 'Nashik, Maharashtra', 'India — 422001']
+      details: ['Techno Valves', 'H-27, MIDC, Satpur Colony', 'Nashik, Maharashtra — 422012']
     },
     {
       icon: '📞',
       title: 'Phone',
-      details: ['+91 22 1234 5678', '+91 22 8765 4321']
+      details: ['+91 87882 80766']
     },
     {
       icon: '✉️',
       title: 'Email',
-      details: ['info@technovalves.com', 'sales@technovalves.com']
+      details: ['business@technovalves.org', 'sales@technovalves.org']
     },
     {
       icon: '🕐',
@@ -200,14 +200,18 @@ export default function Contact() {
               </div>
             ))}
 
-            {/* Map Placeholder */}
-            <div className="bg-[var(--industrial-bg-secondary)] p-6 rounded-lg border border-[var(--industrial-border)]">
-              <div className="h-64 bg-[var(--industrial-bg-tertiary)] rounded-lg flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-4xl mb-2">🗺️</div>
-                  <p className="text-[var(--industrial-text-secondary)]">Map Location</p>
-                </div>
-              </div>
+            {/* Map */}
+            <div className="rounded-lg border border-[var(--industrial-border)] overflow-hidden" style={{ height: '280px' }}>
+              <iframe
+                title="Techno Valves Location"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                src="https://maps.google.com/maps?q=Techno+Valves+H-27+MIDC+Satpur+Colony+Nashik+Maharashtra+422012&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              />
             </div>
           </motion.div>
         </div>

@@ -106,6 +106,40 @@ export default function Engineering() {
             ))}
           </div>
         </motion.div>
+
+        {/* Certifications Download */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="mt-10 bg-[var(--industrial-bg-secondary)] p-8 rounded-lg border border-[var(--industrial-border)]"
+        >
+          <h2 className="text-2xl font-bold mb-2 text-[var(--industrial-text-primary)]">
+            Certifications
+          </h2>
+          <p className="text-[var(--industrial-text-secondary)] mb-6 text-sm">
+            Download our official quality and design certifications.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="/ISO Certification (1).pdf"
+              download
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-lg border border-[var(--industrial-border)] hover:border-[var(--industrial-accent)] transition-all group"
+              style={{ background: 'var(--industrial-bg-tertiary)' }}
+            >
+              <span className="text-2xl">📄</span>
+              <div>
+                <p className="text-sm font-bold text-[var(--industrial-text-primary)] group-hover:text-[var(--industrial-accent)] transition-colors">
+                  ISO 9001:2015
+                </p>
+                <p className="text-xs text-[var(--industrial-text-secondary)]">Quality Management Certificate</p>
+              </div>
+              <svg className="w-4 h-4 ml-2 text-[var(--industrial-text-secondary)] group-hover:text-[var(--industrial-accent)] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+            </a>
+          </div>
+        </motion.div>
       </div>
     </div>
   );

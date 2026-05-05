@@ -9,25 +9,35 @@ export default {
             colors: {
                 industrial: {
                     bg: {
-                        primary: '#12161A',
-                        secondary: '#1B2229',
+                        primary: '#0A0F14',
+                        secondary: '#111821',
                     },
-                    border: '#2E3A45',
+                    border: '#1E293B',
                     text: {
-                        primary: '#E5E7EB',
-                        secondary: '#9CA3AF',
+                        primary: '#F5F7FA',
+                        secondary: '#A3AAB7',
                     },
-                    accent: '#0EA5E9',
+                    accent: '#2563EB',
                     highlight: '#F59E0B',
                 }
             },
             fontFamily: {
-                serif: ['Playfair Display', 'serif'],
+                display: ['"Clash Display"', 'Inter', 'sans-serif'],
                 sans: ['Inter', 'sans-serif'],
+                // keep serif alias pointing to Clash Display for backward compat
+                serif: ['"Clash Display"', 'Inter', 'sans-serif'],
             },
             backgroundImage: {
-                'industrial-gradient': 'linear-gradient(135deg, #1B2229 0%, #0E1114 100%)',
-            }
+                'industrial-gradient': 'linear-gradient(135deg, #111821 0%, #0A0F14 100%)',
+            },
+            screens: {
+                'xs': '320px',
+                'sm': '640px',
+                'md': '768px',
+                'lg': '1025px',
+                'xl': '1280px',
+                '2xl': '1441px',
+            },
         },
     },
     plugins: [],

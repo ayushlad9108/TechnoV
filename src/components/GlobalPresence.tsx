@@ -22,15 +22,14 @@ const redIcon = new L.Icon({
 });
 
 const locations = [
-  { city: 'Nashik',         country: 'India 🇮🇳',                type: 'Headquarters',   lat: 19.9975,  lng: 73.7898  },
-  { city: 'Mumbai',         country: 'India 🇮🇳',                type: 'Sales Office',   lat: 19.0760,  lng: 72.8777  },
-  { city: 'Dubai',          country: 'United Arab Emirates 🇦🇪', type: 'Export Market',  lat: 25.2048,  lng: 55.2708  },
-  { city: 'Riyadh',         country: 'Saudi Arabia 🇸🇦',         type: 'Export Market',  lat: 24.7136,  lng: 46.6753  },
-  { city: 'London',         country: 'United Kingdom 🇬🇧',       type: 'Export Market',  lat: 51.5074,  lng: -0.1278  },
-  { city: 'New York',       country: 'United States 🇺🇸',        type: 'Export Market',  lat: 40.7128,  lng: -74.0060 },
-  { city: 'Singapore',      country: 'Singapore 🇸🇬',            type: 'Export Market',  lat: 1.3521,   lng: 103.8198 },
-  { city: 'Sydney',         country: 'Australia 🇦🇺',            type: 'Export Market',  lat: -33.8688, lng: 151.2093 },
-  { city: 'Johannesburg',   country: 'South Africa 🇿🇦',         type: 'Export Market',  lat: -26.2041, lng: 28.0473  },
+  { city: 'Nashik',       country: 'India 🇮🇳',         type: 'Headquarters',  lat: 19.9975,  lng: 73.7898  },
+  { city: 'Mumbai',       country: 'India 🇮🇳',         type: 'Sales Office',  lat: 19.0760,  lng: 72.8777  },
+  { city: 'Tashkent',    country: 'Uzbekistan 🇺🇿',     type: 'Export Market', lat: 41.2995,  lng: 69.2401  },
+  { city: 'Manila',       country: 'Philippines 🇵🇭',   type: 'Export Market', lat: 14.5995,  lng: 120.9842 },
+  { city: 'Dhaka',        country: 'Bangladesh 🇧🇩',    type: 'Export Market', lat: 23.8103,  lng: 90.4125  },
+  { city: 'Riyadh',       country: 'Saudi Arabia 🇸🇦',  type: 'Export Market', lat: 24.7136,  lng: 46.6753  },
+  { city: 'Colombo',      country: 'Sri Lanka 🇱🇰',     type: 'Export Market', lat: 6.9271,   lng: 79.8612  },
+  { city: 'Muscat',       country: 'Oman 🇴🇲',          type: 'Export Market', lat: 23.5880,  lng: 58.3829  },
 ];
 
 const GlobalPresence: React.FC = () => {
@@ -43,12 +42,13 @@ const GlobalPresence: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-serif font-bold text-white mb-4"
+            className="text-4xl md:text-5xl font-display font-bold mb-4"
+            style={{ color: 'var(--industrial-text-primary)' }}
           >
             Our <span className="text-[var(--industrial-accent)]">Global</span> Reach
           </motion.h2>
           <p className="text-[var(--industrial-text-secondary)] text-lg">
-            Exporting precision valves from Nashik to 8+ countries worldwide.
+            Exporting precision valves from Nashik to 6 countries worldwide.
           </p>
         </div>
 
