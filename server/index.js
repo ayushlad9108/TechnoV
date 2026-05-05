@@ -17,12 +17,20 @@ const razorpay = new Razorpay({
 // ─── Express ─────────────────────────────────────────────────────────────────
 const app = express();
 app.use(cors({
-  origin: [
-    'http://localhost:5173',
-    'http://localhost:5174',
-    'http://localhost:5175',
-    process.env.FRONTEND_URL,
-  ].filter(Boolean),
+  origin: function(origin, callback) {
+    // Allow requests with no origin (mobile apps, curl, Postman)
+    if (!origin) return callback(null, true);
+    // Allow all vercel.app domains, localhost, and the configured frontend URL
+    if (
+      origin.endsWith('.vercel.app') ||
+      origin.startsWith('http://localhost') ||
+      origin === process.env.FRONTEND_URL
+    ) {
+      return callback(null, true);
+    }
+    callback(new Error('Not allowed by CORS'));
+  },
+  credentials: true,
 }));
 app.use(express.json());
 
