@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 interface Blog {
   _id: string;
@@ -47,19 +47,9 @@ const SEED_BLOGS: Blog[] = [
 ];
 
 export default function Blogs() {
-  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [blogs] = useState<Blog[]>(SEED_BLOGS);
   const [selected, setSelected] = useState<Blog | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/blogs`)
-      .then(r => r.json())
-      .then(data => {
-        setBlogs(Array.isArray(data) && data.length > 0 ? data : SEED_BLOGS);
-      })
-      .catch(() => setBlogs(SEED_BLOGS))
-      .finally(() => setLoading(false));
-  }, []);
+  const loading = false;
 
   const formatDate = (dateStr: string) =>
     new Date(dateStr).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
