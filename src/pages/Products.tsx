@@ -216,13 +216,14 @@ function CategoryCard({ cat }: { cat: ProductCategory }) {
           {current.label.toUpperCase()}
         </span>
 
-        {/* Watermark — top right */}
-        <span
-          className="absolute top-3 right-3 z-10 font-bold tracking-widest"
-          style={{ fontSize: '0.55rem', color: '#bbb', letterSpacing: '0.1em' }}
-        >
-          TECHNOVALVES
-        </span>
+        {/* Logo — top right corner */}
+        <img
+          src="/logo 2.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute top-2.5 right-2.5 z-10 pointer-events-none select-none"
+          style={{ width: '90px', height: 'auto', objectFit: 'contain', opacity: 0.9 }}
+        />
 
         {/* Animated product image */}
         <AnimatePresence mode="wait">
@@ -235,7 +236,14 @@ function CategoryCard({ cat }: { cat: ProductCategory }) {
             exit={{ opacity: 0, scale: 1.04 }}
             transition={{ duration: 0.35, ease: 'easeInOut' }}
             className="w-full h-full object-contain p-6 transition-transform duration-500 group-hover:scale-105"
-            style={{ position: 'absolute', inset: 0 }}
+            style={{
+              position: 'absolute',
+              inset: 0,
+              zIndex: 2,
+              objectPosition: (cat.id === 'gate-valves' && current.file === 'Gate_Valve.png')
+                ? '15% center'
+                : 'center',
+            }}
             onError={e => { (e.currentTarget as HTMLImageElement).style.opacity = '0.15'; }}
           />
         </AnimatePresence>

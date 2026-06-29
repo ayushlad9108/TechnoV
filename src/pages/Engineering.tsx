@@ -107,40 +107,6 @@ export default function Engineering() {
           </div>
         </motion.div>
 
-        {/* Certifications Download */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="mt-10 bg-[var(--industrial-bg-secondary)] p-8 rounded-lg border border-[var(--industrial-border)]"
-        >
-          <h2 className="text-2xl font-bold mb-2 text-[var(--industrial-text-primary)]">
-            Certifications
-          </h2>
-          <p className="text-[var(--industrial-text-secondary)] mb-6 text-sm">
-            View our official quality certifications.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="/Certificate - Techno Valves.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-lg border border-[var(--industrial-border)] hover:border-[var(--industrial-accent)] transition-all group"
-              style={{ background: 'var(--industrial-bg-tertiary)' }}
-            >
-              <span className="text-2xl">📄</span>
-              <div>
-                <p className="text-sm font-bold text-[var(--industrial-text-primary)] group-hover:text-[var(--industrial-accent)] transition-colors">
-                  ISO 9001:2015
-                </p>
-                <p className="text-xs text-[var(--industrial-text-secondary)]">Certificate – Techno Valves</p>
-              </div>
-              <svg className="w-4 h-4 ml-2 text-[var(--industrial-text-secondary)] group-hover:text-[var(--industrial-accent)] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
-          </div>
-        </motion.div>
       </div>
     </div>
   );

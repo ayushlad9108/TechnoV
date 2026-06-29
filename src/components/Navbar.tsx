@@ -25,10 +25,12 @@ const Navbar: React.FC = () => {
         { name: 'Contact',     href: '/contact' },
     ];
 
-    const navBg  = scrolled ? 'bg-white border-gray-200' : 'bg-transparent border-transparent';
-    const linkCls = scrolled ? 'text-gray-700 hover:text-blue-600' : 'text-gray-800 hover:text-blue-600';
-    const logoCls = scrolled ? 'text-gray-900' : 'text-gray-900';
-    const iconCls = scrolled ? 'text-gray-600 hover:text-blue-600' : 'text-gray-600 hover:text-blue-600';
+    const isHome = location.pathname === '/';
+
+    const navBg   = scrolled ? 'bg-white border-gray-200' : 'bg-transparent border-transparent';
+    const linkCls = (scrolled || !isHome) ? 'text-gray-700 hover:text-blue-600' : 'text-white/90 hover:text-white';
+    const logoCls = (scrolled || !isHome) ? 'text-gray-900' : 'text-white';
+    const iconCls = (scrolled || !isHome) ? 'text-gray-600 hover:text-blue-600' : 'text-white/80 hover:text-white';
 
     return (
         <>

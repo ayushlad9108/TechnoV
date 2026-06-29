@@ -9,8 +9,8 @@ const showcaseProducts = [
     category: 'Ball Valves',
     description: 'Zero-leakage performance in critical flow control systems.',
     spec: 'PN100 / Class 600',
-    price: 25000,
     image: '/TechnoValves Final Photos/Ball Valves/Ball_Valve.png',
+    imgStyle: {},
   },
   {
     id: 'gate-valve-001',
@@ -18,8 +18,8 @@ const showcaseProducts = [
     category: 'Gate Valves',
     description: 'Reliable on-off isolation for demanding industrial pipeline environments.',
     spec: 'PN160 / Class 900',
-    price: 32000,
     image: '/TechnoValves Final Photos/Gate Valves/Gate_Valve.png',
+    imgStyle: { transform: 'translateX(-8%)' },
   },
   {
     id: 'butterfly-valve-001',
@@ -27,8 +27,8 @@ const showcaseProducts = [
     category: 'Butterfly Valves',
     description: 'Compact, lightweight valve for efficient flow regulation across industries.',
     spec: 'PN40 / Class 300',
-    price: 18000,
     image: '/TechnoValves Final Photos/Butterfly Valves/Butterfly_Valve.png',
+    imgStyle: {},
   },
 ];
 
@@ -112,11 +112,23 @@ const ProductApplicationShowcase: React.FC = () => {
                 onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--industrial-border)')}
               >
                 {/* Image */}
-                <div className="h-56 overflow-hidden" style={{ background: 'var(--industrial-bg-secondary)' }}>
+                <div className="h-56 overflow-hidden relative" style={{ background: 'var(--industrial-bg-secondary)' }}>
+                  {/* Logo watermark — top right */}
+                  <img
+                    src="/logo 2.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute top-2 right-2 z-10 pointer-events-none select-none"
+                    style={{ width: '90px', height: 'auto', objectFit: 'contain', opacity: 0.9 }}
+                  />
                   <img
                     src={p.image}
                     alt={p.name}
-                    className="w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                    style={{
+                      padding: p.id === 'gate-valve-001' ? '8px' : '24px',
+                      objectPosition: p.id === 'gate-valve-001' ? '35% center' : 'center',
+                    }}
                     onError={e => { e.currentTarget.style.display = 'none'; }}
                   />
                 </div>
