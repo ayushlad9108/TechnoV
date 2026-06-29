@@ -18,8 +18,8 @@ const showcaseProducts = [
     category: 'Gate Valves',
     description: 'Reliable on-off isolation for demanding industrial pipeline environments.',
     spec: 'PN160 / Class 900',
-    image: '/TechnoValves Final Photos/Gate Valves/Gate_Valve.png',
-    imgStyle: { transform: 'translateX(-8%)' },
+    image: '/TechnoValves Final Photos/Gate Valves/Electric_Actuated_Gate_Valve.png',
+    imgStyle: {},
   },
   {
     id: 'butterfly-valve-001',
@@ -127,7 +127,7 @@ const ProductApplicationShowcase: React.FC = () => {
                     className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                     style={{
                       padding: p.id === 'gate-valve-001' ? '8px' : '24px',
-                      objectPosition: p.id === 'gate-valve-001' ? '35% center' : 'center',
+                      objectPosition: 'center',
                     }}
                     onError={e => { e.currentTarget.style.display = 'none'; }}
                   />
