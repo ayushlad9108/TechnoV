@@ -50,16 +50,16 @@ export default function Engineering() {
           </p>
         </motion.div>
 
-        {/* Hero Image Placeholder */}
+        {/* Hero Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           className="mb-16 rounded-lg overflow-hidden"
         >
           <img
-            src="/images/industrial-bridge.jpg"
+            src="/Engineering Solutions 2.png"
             alt="Engineering Excellence"
-            className="w-full h-96 object-cover"
+            className="w-full h-96 object-cover object-center"
           />
         </motion.div>
 
@@ -118,12 +118,13 @@ export default function Engineering() {
             Certifications
           </h2>
           <p className="text-[var(--industrial-text-secondary)] mb-6 text-sm">
-            Download our official quality and design certifications.
+            View our official quality certifications.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
-              href="/ISO Certification (1).pdf"
-              download
+              href="/Certificate - Techno Valves.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-6 py-3 rounded-lg border border-[var(--industrial-border)] hover:border-[var(--industrial-accent)] transition-all group"
               style={{ background: 'var(--industrial-bg-tertiary)' }}
             >
@@ -132,10 +133,10 @@ export default function Engineering() {
                 <p className="text-sm font-bold text-[var(--industrial-text-primary)] group-hover:text-[var(--industrial-accent)] transition-colors">
                   ISO 9001:2015
                 </p>
-                <p className="text-xs text-[var(--industrial-text-secondary)]">Quality Management Certificate</p>
+                <p className="text-xs text-[var(--industrial-text-secondary)]">Certificate – Techno Valves</p>
               </div>
               <svg className="w-4 h-4 ml-2 text-[var(--industrial-text-secondary)] group-hover:text-[var(--industrial-accent)] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </a>
           </div>

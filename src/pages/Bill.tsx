@@ -203,7 +203,7 @@ export default function Bill() {
           {/* Footer */}
           <div className="text-center text-sm text-gray-600 border-t border-gray-300 pt-4">
             <p className="mb-2">Thank you for your business!</p>
-            <p>For any queries, contact us at business@technovalves.org or +91 87882 80766</p>
+            <p>For any queries, contact us at marketing@technovalves.org or +91 87882 80766</p>
           </div>
         </motion.div>
 

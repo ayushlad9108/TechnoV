@@ -25,7 +25,7 @@ const EngineeringResponse: React.FC = () => {
           style={{ background: 'var(--industrial-bg-primary)' }}
         >
           <motion.img
-            src="/images/valve-response.png"
+            src="/Valve Response 3.jpg"
             alt="Industrial Valves"
             initial={{ opacity: 0, scale: 0.97 }}
             whileInView={{ opacity: 1, scale: 1 }}

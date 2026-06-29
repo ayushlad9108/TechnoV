@@ -86,13 +86,13 @@ const Footer: React.FC = () => {
                         </ul>
                     </div>
 
-                    {/* Design Certifications */}
+                    {/* Licensed Manufacturer */}
                     <div>
                         <h4
                             className="font-bold uppercase tracking-widest text-sm mb-6"
                             style={{ color: 'var(--industrial-text-primary)' }}
                         >
-                            Design Certifications
+                            Licensed Manufacturer
                         </h4>
                         <ul className="space-y-4 text-base" style={{ color: 'var(--industrial-text-secondary)' }}>
                             {[
@@ -141,19 +141,26 @@ const Footer: React.FC = () => {
                                 >
                                     +91 87882 80766
                                 </a>
+                                <br />
+                                <a
+                                    href="tel:+919607600918"
+                                    className="hover:text-[var(--industrial-accent)] transition-colors"
+                                >
+                                    +91 96076 00918
+                                </a>
                             </li>
                             <li>
                                 <span
                                     className="block text-xs uppercase mb-1"
                                     style={{ color: 'var(--industrial-text-secondary)', opacity: 0.6 }}
                                 >
-                                    Business
+                                    Marketing
                                 </span>
                                 <a
-                                    href="mailto:business@technovalves.org"
+                                    href="mailto:marketing@technovalves.org"
                                     className="hover:text-[var(--industrial-accent)] transition-colors"
                                 >
-                                    business@technovalves.org
+                                    marketing@technovalves.org
                                 </a>
                             </li>
                             <li>

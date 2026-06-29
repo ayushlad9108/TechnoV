@@ -5,38 +5,38 @@ import { Link } from 'react-router-dom';
 const showcaseProducts = [
   {
     id: 'ball-valve-001',
-    name: '2PC Ball Valve',
+    name: 'Ball Valve',
     category: 'Ball Valves',
     description: 'Zero-leakage performance in critical flow control systems.',
     spec: 'PN100 / Class 600',
     price: 25000,
-    image: '/background-remover (1)/2PC-350NB BALL VALVE.png',
+    image: '/TechnoValves Final Photos/Ball Valves/Ball_Valve.png',
   },
   {
-    id: 'ball-valve-004',
-    name: 'Pneumatic Ball Valve',
-    category: 'Ball Valves',
-    description: 'Pneumatically actuated for high-cycle automated applications.',
-    spec: 'PN63 / Class 400',
-    price: 42000,
-    image: '/background-remover (1)/4_way_pneumatic_ball_valve.png',
+    id: 'gate-valve-001',
+    name: 'Gate Valve',
+    category: 'Gate Valves',
+    description: 'Reliable on-off isolation for demanding industrial pipeline environments.',
+    spec: 'PN160 / Class 900',
+    price: 32000,
+    image: '/TechnoValves Final Photos/Gate Valves/Gate_Valve.png',
   },
   {
-    id: 'ball-valve-006',
-    name: 'Jacketed Ball Valve',
-    category: 'Ball Valves',
-    description: 'Steam-jacketed to maintain media temperature and prevent solidification.',
+    id: 'butterfly-valve-001',
+    name: 'Butterfly Valve',
+    category: 'Butterfly Valves',
+    description: 'Compact, lightweight valve for efficient flow regulation across industries.',
     spec: 'PN40 / Class 300',
-    price: 48000,
-    image: '/background-remover (1)/Jacketed Ball valve.png',
+    price: 18000,
+    image: '/TechnoValves Final Photos/Butterfly Valves/Butterfly_Valve.png',
   },
 ];
 
 const industries = [
-  { name: 'Oil & Gas',           image: '/images/industry-oil-gas.jpg',   desc: 'Upstream, midstream & downstream flow control' },
-  { name: 'Power Generation',    image: '/images/industry-power.jpg',     desc: 'High-temp, high-pressure steam service' },
-  { name: 'Chemical Processing', image: '/images/industry-chemical.jpg',  desc: 'Corrosion-resistant solutions for aggressive media' },
-  { name: 'Water & Wastewater',  image: '/images/industry-water.jpg',     desc: 'Municipal and industrial water systems' },
+  { name: 'Oil & Gas',           image: '/Oil and Gas 2.webp',          desc: 'Upstream, midstream & downstream flow control' },
+  { name: 'Power Generation',    image: '/Power Generation.webp',       desc: 'High-temp, high-pressure steam service' },
+  { name: 'Chemical Processing', image: '/Chemical Processing 2.jpg',   desc: 'Corrosion-resistant solutions for aggressive media' },
+  { name: 'Water & Wastewater',  image: '/Water and Wastewater.webp',   desc: 'Municipal and industrial water systems' },
 ];
 
 const ProductApplicationShowcase: React.FC = () => {

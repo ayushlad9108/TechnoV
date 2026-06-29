@@ -14,7 +14,7 @@ function validateEmail(email: string): string {
   if (parts.length !== 2) return 'Enter a valid email address.';
   const domain = parts[1].toLowerCase();
   if (!VALID_DOMAINS.includes(domain)) {
-    return `Please use a personal email (e.g. Gmail, Yahoo, Outlook). Business emails are also accepted — contact us directly at business@technovalves.org.`;
+    return `Please use a personal email (e.g. Gmail, Yahoo, Outlook). Business emails are also accepted — contact us directly at marketing@technovalves.org.`;
   }
   return '';
 }
@@ -43,14 +43,14 @@ export default function Contact() {
       `Company: ${formData.company || 'Not provided'}\n\n` +
       `Message:\n${formData.message}`
     );
-    window.location.href = `mailto:business@technovalves.org?cc=sales@technovalves.org&subject=${subject}&body=${body}`;
+    window.location.href = `mailto:marketing@technovalves.org?cc=sales@technovalves.org&subject=${subject}&body=${body}`;
     setSubmitted(true);
   };
 
   const contactInfo = [
     { icon: '📍', title: 'Address',        details: ['Techno Valves', 'H-27, MIDC, Satpur Colony', 'Nashik, Maharashtra — 422012'] },
-    { icon: '📞', title: 'Phone',          details: ['+91 87882 80766'] },
-    { icon: '✉️', title: 'Email',          details: ['business@technovalves.org', 'sales@technovalves.org'] },
+    { icon: '📞', title: 'Phone',          details: ['+91 87882 80766', '+91 96076 00918'] },
+    { icon: '✉️', title: 'Email',          details: ['marketing@technovalves.org', 'sales@technovalves.org'] },
     { icon: '🕐', title: 'Business Hours', details: ['Monday - Friday: 9:00 AM - 6:00 PM', 'Saturday: 9:00 AM - 1:00 PM'] },
   ];
 
@@ -86,7 +86,7 @@ export default function Contact() {
                   <div>
                     <p className="font-semibold text-green-400">Email client opened!</p>
                     <p className="text-sm text-[var(--industrial-text-secondary)] mt-0.5">
-                      Your message is pre-filled and ready to send to <strong>business@technovalves.org</strong> and <strong>sales@technovalves.org</strong>. Just hit Send in your email client.
+                      Your message is pre-filled and ready to send to <strong>marketing@technovalves.org</strong> and <strong>sales@technovalves.org</strong>. Just hit Send in your email client.
                     </p>
                     <button onClick={() => setSubmitted(false)} className="text-xs text-[var(--industrial-accent)] mt-2 hover:underline">
                       Send another message

@@ -3,8 +3,8 @@ import { useInView } from 'framer-motion';
 
 const stats = [
   { value: 40, suffix: '+', label: 'YEARS EXPERIENCE', isNumber: true },
-  { value: 150, suffix: '+', label: 'PRESTIGIOUS CLIENTS', isNumber: true },
-  { value: 500, suffix: '+', label: 'PROJECTS DELIVERED', isNumber: true },
+  { value: 150, suffix: '+', label: 'DELIVERING EXCELLENCE FOR PRESTIGIOUS CLIENTS', isNumber: true },
+  { value: 3000, suffix: '+', label: 'PRODUCTS DELIVERED', isNumber: true },
   { value: 'ISO', suffix: '', label: '9001:2015 CERTIFIED', isNumber: false },
 ];
 

@@ -20,7 +20,7 @@ const SEED_BLOGS: Blog[] = [
     date: '2025-03-15',
     summary: 'We participated in PETROTECH 2025, India\'s premier oil & gas technology exhibition, showcasing our latest high-pressure ball valve series to 200+ industry leaders.',
     content: `TechnoValves proudly participated in PETROTECH 2025 held at Bharat Mandapam, New Delhi. Our team showcased the newly launched PN160 3PC Ball Valve series and the Steam-Jacketed Ball Valve range, drawing significant interest from procurement teams at ONGC, BPCL, and HPCL.\n\nKey highlights from the event:\n• Live demonstration of our pneumatic actuator integration\n• Technical sessions on fugitive emission compliance\n• Signed MoUs with 3 new distribution partners\n\nThe event reinforced our commitment to serving India's energy sector with world-class valve solutions.`,
-    image: '/images/Gemini_Generated_Image_trnjlntrnjlntrnj (1).png',
+    image: '/Exhibition.jpg',
     tags: ['Exhibition', 'Oil & Gas', 'PETROTECH'],
     createdAt: '2025-03-15T10:00:00Z',
   },
@@ -30,7 +30,7 @@ const SEED_BLOGS: Blog[] = [
     date: '2025-02-10',
     summary: 'TechnoValves successfully completed its ISO 9001:2015 recertification audit, reaffirming our commitment to quality management across all operations.',
     content: `We are proud to announce the successful completion of our ISO 9001:2015 recertification audit conducted by Bureau Veritas. The audit covered all aspects of our quality management system including procurement, testing, documentation, and customer service.\n\nThe auditors specifically commended our:\n• 100% hydrostatic testing protocol\n• Traceability system for raw materials\n• Customer complaint resolution process\n\nThis certification reinforces our position as a trusted supplier to critical industries including power generation, petrochemicals, and water treatment.`,
-    image: '/images/Gemini_Generated_Image_f1o348f1o348f1o3 (1).png',
+    image: '/Certification.jpg',
     tags: ['Certification', 'Quality', 'ISO'],
     createdAt: '2025-02-10T09:00:00Z',
   },
@@ -40,7 +40,7 @@ const SEED_BLOGS: Blog[] = [
     date: '2025-01-20',
     summary: 'TechnoValves has been empanelled as an approved vendor for BHEL\'s thermal power plant projects, covering supply of high-temperature gate and globe valves.',
     content: `TechnoValves has been officially empanelled as an approved vendor by Bharat Heavy Electricals Limited (BHEL) for the supply of high-temperature, high-pressure gate valves and globe valves for their upcoming thermal power plant projects.\n\nThis empanelment covers:\n• Class 600 and Class 900 gate valves in alloy steel\n• Globe control valves for steam service\n• Extended stem ball valves for insulated lines\n\nThis partnership marks a significant milestone in our journey and validates the quality and reliability of our products at the highest levels of Indian industry.`,
-    image: '/images/Gemini_Generated_Image_d7a57gd7a57gd7a5 (1).png',
+    image: '/Partnership 2.jpg',
     tags: ['Partnership', 'BHEL', 'Power Generation'],
     createdAt: '2025-01-20T08:00:00Z',
   },
@@ -98,7 +98,7 @@ export default function Blogs() {
                 <img
                   src={selected.image}
                   alt={selected.title}
-                  className="w-full h-full object-cover"
+                  className={`w-full h-full object-cover ${selected._id === '3' ? 'object-bottom' : 'object-center'}`}
                   onError={(e) => { e.currentTarget.style.display = 'none'; }}
                 />
               </div>
@@ -145,7 +145,7 @@ export default function Blogs() {
                   <img
                     src={blog.image}
                     alt={blog.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${blog._id === '3' ? 'object-bottom' : 'object-center'}`}
                     onError={(e) => { e.currentTarget.style.display = 'none'; }}
                   />
                 </div>

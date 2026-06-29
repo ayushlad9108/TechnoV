@@ -23,7 +23,7 @@ const IndustrialChallenges: React.FC = () => {
       {/* Parallax BG */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0 pointer-events-none">
         <img
-          src="/images/industrial-challenges.jpg"
+          src="/Engineering Solutions 2.png"
           alt=""
           className="w-full h-full object-cover"
           style={{ opacity: 0.09 }}

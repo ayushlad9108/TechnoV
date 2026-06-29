@@ -100,7 +100,7 @@ const StrategicPartners: React.FC = () => {
           className="text-4xl md:text-5xl font-display font-bold mb-2 uppercase tracking-tighter"
           style={{ color: 'var(--industrial-text-primary)' }}
         >
-          Prestigious Clients
+          Delivering Excellence for Prestigious Clients
         </h2>
         <div className="w-12 h-1 bg-[var(--industrial-accent)]" />
       </div>

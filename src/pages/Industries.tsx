@@ -6,25 +6,25 @@ export default function Industries() {
       name: 'Oil & Gas',
       description: 'Critical flow control solutions for upstream, midstream, and downstream operations',
       applications: ['Refineries', 'Pipelines', 'Offshore Platforms', 'Storage Facilities'],
-      image: '/images/industry-oil-gas.jpg'
+      image: '/Oil and Gas 2.webp'
     },
     {
       name: 'Chemical Processing',
       description: 'Corrosion-resistant valves for aggressive chemical environments',
       applications: ['Petrochemicals', 'Pharmaceuticals', 'Specialty Chemicals', 'Fertilizers'],
-      image: '/images/industry-chemical.jpg'
+      image: '/Chemical Processing 2.jpg'
     },
     {
       name: 'Power Generation',
       description: 'High-temperature, high-pressure valves for power plants',
       applications: ['Thermal Power', 'Nuclear Power', 'Renewable Energy', 'Cogeneration'],
-      image: '/images/industry-power.jpg'
+      image: '/Power Generation.webp'
     },
     {
       name: 'Water & Wastewater',
       description: 'Durable valves for municipal and industrial water systems',
       applications: ['Treatment Plants', 'Distribution', 'Desalination', 'Irrigation'],
-      image: '/images/industry-water.jpg'
+      image: '/Water and Wastewater.webp'
     }
   ];
 

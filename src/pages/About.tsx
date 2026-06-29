@@ -99,7 +99,7 @@ export default function About() {
         >
           {[
             { value: '40+', label: 'Years Experience' },
-            { value: '150+', label: 'Prestigious Clients' },
+            { value: '150+', label: 'Delivering Excellence for Prestigious Clients' },
             { value: '6+',  label: 'Export Countries' },
             { value: 'ISO', label: '9001:2015 Certified' },
           ].map((stat) => (
