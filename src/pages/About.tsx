@@ -12,7 +12,7 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <span className="text-[var(--industrial-accent)] font-mono text-sm tracking-widest uppercase mb-4 block">
+          <span className="text-[var(--industrial-accent)] font-sans text-sm tracking-widest uppercase mb-4 block">
             Est. 1985 — Satpur MIDC, Nashik, Maharashtra
           </span>
           <h1 className="text-5xl md:text-6xl font-serif font-bold text-[var(--industrial-text-primary)] mb-6 leading-tight">
@@ -40,7 +40,7 @@ export default function About() {
               Your browser does not support the video tag.
             </video>
           </div>
-          <p className="text-center text-sm text-[var(--industrial-text-secondary)] mt-3 font-mono tracking-wider">
+          <p className="text-center text-sm text-[var(--industrial-text-secondary)] mt-3 font-sans tracking-wider">
             TECHNO VALVES — COMPANY OVERVIEW
           </p>
         </motion.div>
@@ -83,7 +83,7 @@ export default function About() {
               { label: 'Certification', value: 'ISO 9001:2015' },
             ].map((item) => (
               <div key={item.label} className="flex justify-between items-start border-b border-[var(--industrial-border)] pb-4">
-                <span className="text-sm font-mono text-[var(--industrial-accent)] uppercase tracking-wider">{item.label}</span>
+                <span className="text-sm font-sans text-[var(--industrial-accent)] uppercase tracking-wider">{item.label}</span>
                 <span className="text-base font-semibold text-[var(--industrial-text-primary)] text-right max-w-xs">{item.value}</span>
               </div>
             ))}
@@ -104,8 +104,8 @@ export default function About() {
             { value: 'ISO', label: '9001:2015 Certified' },
           ].map((stat) => (
             <div key={stat.label} className="bg-[var(--industrial-bg-secondary)] p-10 text-center">
-              <div className="text-4xl md:text-5xl font-bold text-[var(--industrial-accent)] font-mono mb-2">{stat.value}</div>
-              <div className="text-sm text-[var(--industrial-text-secondary)] uppercase tracking-widest font-mono">{stat.label}</div>
+              <div className="text-4xl md:text-5xl font-bold text-[var(--industrial-accent)] font-sans mb-2">{stat.value}</div>
+              <div className="text-sm text-[var(--industrial-text-secondary)] uppercase tracking-widest font-sans">{stat.label}</div>
             </div>
           ))}
         </motion.div>

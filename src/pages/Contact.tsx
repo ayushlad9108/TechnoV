@@ -51,7 +51,7 @@ export default function Contact() {
     { icon: '📍', title: 'Address',        details: ['Techno Valves', 'H-27, MIDC, Satpur Colony', 'Nashik, Maharashtra — 422012'] },
     { icon: '📞', title: 'Phone',          details: ['+91 87882 80766', '+91 96076 00918'] },
     { icon: '✉️', title: 'Email',          details: ['marketing@technovalves.org', 'sales@technovalves.org'] },
-    { icon: '🕐', title: 'Business Hours', details: ['Monday - Friday: 9:00 AM - 6:00 PM', 'Saturday: 9:00 AM - 1:00 PM'] },
+    { icon: '🕐', title: 'Business Hours', details: ['Monday - Friday: 9:00 AM - 5:00 PM', 'Sunday: 9:00 AM - 5:00 PM', 'Saturday: Closed'] },
   ];
 
   const inp = 'w-full px-4 py-3 bg-[var(--industrial-bg-tertiary)] border border-[var(--industrial-border)] rounded-lg focus:outline-none focus:border-[var(--industrial-accent)] text-[var(--industrial-text-primary)]';

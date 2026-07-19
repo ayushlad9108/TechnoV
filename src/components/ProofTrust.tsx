@@ -36,13 +36,13 @@ const ProofTrust: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-[var(--industrial-border)]/30">
           {stats.map((stat, index) => (
             <div key={index} className="flex flex-col items-center">
-              <span className="text-4xl md:text-5xl font-bold mb-2 font-mono" style={{ color: 'var(--industrial-text-primary)' }}>
+              <span className="text-4xl md:text-5xl font-bold mb-2 font-sans" style={{ color: 'var(--industrial-text-primary)' }}>
                 {stat.isNumber
                   ? <CountUp target={stat.value as number} suffix={stat.suffix} started={inView} />
                   : <>{stat.value}</>
                 }
               </span>
-              <span className="text-sm font-mono text-[var(--industrial-accent)] tracking-widest">{stat.label}</span>
+              <span className="text-sm font-sans text-[var(--industrial-accent)] tracking-widest uppercase">{stat.label}</span>
             </div>
           ))}
         </div>

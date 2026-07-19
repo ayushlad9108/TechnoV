@@ -63,6 +63,9 @@ export default function Industries() {
                   src={industry.image} 
                   alt={industry.name}
                   className="w-full h-full object-cover"
+                  style={{
+                    objectPosition: industry.name === 'Power Generation' ? 'center 60%' : 'center',
+                  }}
                   onError={(e) => {
                     e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%23374151" width="400" height="300"/%3E%3Ctext x="50%25" y="50%25" text-anchor="middle" dy=".3em" fill="%239ca3af" font-size="20"%3E' + industry.name + '%3C/text%3E%3C/svg%3E';
                   }}

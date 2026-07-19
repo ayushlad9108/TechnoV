@@ -23,9 +23,8 @@ export default {
             },
             fontFamily: {
                 display: ['"Clash Display"', 'Inter', 'sans-serif'],
-                sans: ['Inter', 'sans-serif'],
-                // keep serif alias pointing to Clash Display for backward compat
-                serif: ['"Clash Display"', 'Inter', 'sans-serif'],
+                sans:    ['Inter', 'sans-serif'],
+                serif:   ['"Clash Display"', 'Inter', 'sans-serif'],
             },
             backgroundImage: {
                 'industrial-gradient': 'linear-gradient(135deg, #111821 0%, #0A0F14 100%)',

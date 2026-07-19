@@ -41,8 +41,8 @@ const HeroVideo: React.FC = () => {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
-          className="font-sans font-medium text-white/60 uppercase tracking-[0.28em] mb-5"
-          style={{ fontSize: 'clamp(0.55rem, 1vw, 0.72rem)' }}
+          className="font-display font-semibold text-white/70 uppercase tracking-[0.22em] mb-5"
+          style={{ fontSize: 'clamp(0.6rem, 1vw, 0.78rem)', letterSpacing: '0.22em' }}
         >
           Precision &nbsp;·&nbsp; Performance &nbsp;·&nbsp; Progress
         </motion.p>

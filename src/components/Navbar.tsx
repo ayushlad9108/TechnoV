@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
 
 const Navbar: React.FC = () => {
     const [scrolled, setScrolled]             = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const { theme, toggleTheme } = useTheme();
     const location = useLocation();
 
     useEffect(() => {
@@ -26,11 +28,20 @@ const Navbar: React.FC = () => {
     ];
 
     const isHome = location.pathname === '/';
+    const isDark = theme === 'dark';
 
-    const navBg   = scrolled ? 'bg-white border-gray-200' : 'bg-transparent border-transparent';
-    const linkCls = (scrolled || !isHome) ? 'text-gray-700 hover:text-blue-600' : 'text-white/90 hover:text-white';
-    const logoCls = (scrolled || !isHome) ? 'text-gray-900' : 'text-white';
-    const iconCls = (scrolled || !isHome) ? 'text-gray-600 hover:text-blue-600' : 'text-white/80 hover:text-white';
+    const navBg   = scrolled
+        ? isDark ? 'bg-[#0A0F14] border-[#1E293B]' : 'bg-white border-gray-200'
+        : isHome ? 'bg-transparent border-transparent' : isDark ? 'bg-[#0A0F14] border-[#1E293B]' : 'bg-white border-gray-200';
+    const linkCls = isHome && !scrolled
+        ? 'text-white/90 hover:text-white'
+        : isDark ? 'text-white/80 hover:text-white' : 'text-gray-700 hover:text-blue-600';
+    const logoCls = isHome && !scrolled
+        ? 'text-white'
+        : isDark ? 'text-white' : 'text-gray-900';
+    const iconCls = isHome && !scrolled
+        ? 'text-white/80 hover:text-white'
+        : isDark ? 'text-white/70 hover:text-white' : 'text-gray-600 hover:text-blue-600';
 
     return (
         <>
@@ -45,7 +56,7 @@ const Navbar: React.FC = () => {
 
                     {/* Logo */}
                     <Link to="/" className={`flex items-center gap-3 font-display font-bold text-xl tracking-tight transition-colors duration-200 ${logoCls}`}>
-                        <img src="/logo.png" alt="TechnoValves" className="h-9 w-auto" />
+                        <img src="/logo 2.png" alt="TechnoValves" className="h-9 w-auto" />
                         <span className="hidden sm:inline">TECHNOVALVES</span>
                     </Link>
 
@@ -64,14 +75,50 @@ const Navbar: React.FC = () => {
 
                     {/* Right Controls — desktop */}
                     <div className="hidden md:flex items-center gap-3">
+                        {/* Theme Toggle */}
+                        <button
+                            onClick={toggleTheme}
+                            className={`p-2 rounded-full transition-colors duration-200 ${iconCls}`}
+                            aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+                        >
+                            {isDark ? (
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                                </svg>
+                            ) : (
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                                </svg>
+                            )}
+                        </button>
+
                         <Link to="/get-quote"
                             className="px-5 py-2 rounded-sm font-sans font-semibold text-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200">
                             Get In Touch
                         </Link>
                     </div>
 
-                    {/* Mobile: hamburger only */}
-                    <div className="md:hidden flex items-center">
+                    {/* Mobile: theme toggle + hamburger */}
+                    <div className="md:hidden flex items-center gap-2">
+                        <button
+                            onClick={toggleTheme}
+                            className={`p-2 rounded-full transition-colors duration-200 ${iconCls}`}
+                            aria-label="Toggle theme"
+                        >
+                            {isDark ? (
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                                </svg>
+                            ) : (
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                                </svg>
+                            )}
+                        </button>
                         <button className={`p-2 transition-colors duration-200 ${iconCls}`}
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -93,12 +140,12 @@ const Navbar: React.FC = () => {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: '100%' }}
                         transition={{ type: 'tween', duration: 0.28 }}
-                        className="fixed inset-0 z-40 md:hidden pt-20 px-6 flex flex-col bg-white"
+                        className={`fixed inset-0 z-40 md:hidden pt-20 px-6 flex flex-col ${isDark ? 'bg-[#0A0F14]' : 'bg-white'}`}
                     >
                         <div className="flex flex-col gap-1 mt-4">
                             {navLinks.map((link) => (
                                 <Link key={link.name} to={link.href}
-                                    className="py-4 font-display font-bold text-2xl border-b border-gray-100 text-gray-900 hover:text-blue-600 transition-colors">
+                                    className={`py-4 font-display font-bold text-2xl border-b transition-colors ${isDark ? 'border-[#1E293B] text-white hover:text-blue-400' : 'border-gray-100 text-gray-900 hover:text-blue-600'}`}>
                                     {link.name}
                                 </Link>
                             ))}

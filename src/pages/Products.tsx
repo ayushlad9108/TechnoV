@@ -200,18 +200,17 @@ function CategoryCard({ cat }: { cat: ProductCategory }) {
       <div
         className="relative overflow-hidden group"
         style={{
-          background: '#f0f0f0',
-          aspectRatio: '4/3',
+          background: '#f0f0f0',          aspectRatio: '4/3',
           border: '1.5px solid transparent',
           transition: 'border-color 0.25s',
         }}
-        onMouseEnter={e => (e.currentTarget.style.borderColor = '#1a56db')}
+        onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--industrial-accent)')}
         onMouseLeave={e => (e.currentTarget.style.borderColor = 'transparent')}
       >
         {/* Image label — top left (updates with current image) */}
         <span
           className="absolute top-3 left-3 z-10 font-semibold"
-          style={{ fontSize: '0.62rem', color: '#222', letterSpacing: '0.06em', lineHeight: 1.3, maxWidth: '60%' }}
+          style={{ fontSize: '0.62rem', color: 'var(--industrial-text-primary)', letterSpacing: '0.06em', lineHeight: 1.3, maxWidth: '60%' }}
         >
           {current.label.toUpperCase()}
         </span>
@@ -255,7 +254,7 @@ function CategoryCard({ cat }: { cat: ProductCategory }) {
       <div className="mt-4 flex items-center justify-between gap-3">
         <h3
           className="font-bold"
-          style={{ fontSize: '1.05rem', color: '#1a56db', lineHeight: 1.3 }}
+          style={{ fontSize: '1.05rem', color: 'var(--industrial-accent)', lineHeight: 1.3 }}
         >
           {cat.categoryName}
         </h3>
@@ -264,7 +263,7 @@ function CategoryCard({ cat }: { cat: ProductCategory }) {
           onClick={handleViewMore}
           className="shrink-0 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full font-semibold text-xs transition-all"
           style={{ background: '#111', color: '#fff', cursor: 'pointer', letterSpacing: '0.01em' }}
-          onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = '#1a56db'; }}
+          onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--industrial-accent)'; }}
           onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = '#111'; }}
         >
           View More
@@ -280,7 +279,7 @@ function CategoryCard({ cat }: { cat: ProductCategory }) {
 // ── Page ─────────────────────────────────────────────────────────────────────
 export default function Products() {
   return (
-    <div className="min-h-screen pt-24 pb-20" style={{ background: '#fff' }}>
+    <div className="min-h-screen pt-24 pb-20" style={{ background: 'var(--industrial-bg-primary)' }}>
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
 
         {/* Heading */}
@@ -292,12 +291,12 @@ export default function Products() {
         >
           <h1
             className="font-bold leading-tight"
-            style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.6rem)', color: '#111', lineHeight: 1.2 }}
+            style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.6rem)', color: 'var(--industrial-text-primary)', lineHeight: 1.2 }}
           >
             Diverse Solutions Tailored
             <br />
             to your{' '}
-            <span style={{ color: '#1a56db' }}>Every Need</span>
+            <span style={{ color: 'var(--industrial-accent)' }}>Every Need</span>
           </h1>
         </motion.div>
 

@@ -112,7 +112,7 @@ const ProductApplicationShowcase: React.FC = () => {
                 onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--industrial-border)')}
               >
                 {/* Image */}
-                <div className="h-56 overflow-hidden relative" style={{ background: 'var(--industrial-bg-secondary)' }}>
+                <div className="h-56 overflow-hidden relative" style={{ background: '#f0f0f0' }}>
                   {/* Logo watermark — top right */}
                   <img
                     src="/logo 2.png"

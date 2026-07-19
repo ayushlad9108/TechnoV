@@ -107,8 +107,8 @@ const HeroContinuation: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 + i * 0.07 }}
               >
-                <div className="text-2xl font-bold font-mono" style={{ color: 'var(--industrial-text-primary)' }}>{s.val}</div>
-                <div className="text-xs font-mono tracking-wider mt-1" style={{ color: 'var(--industrial-text-secondary)' }}>{s.label}</div>
+                <div className="text-2xl font-bold font-sans" style={{ color: 'var(--industrial-text-primary)' }}>{s.val}</div>
+                <div className="text-xs font-sans tracking-wider mt-1" style={{ color: 'var(--industrial-text-secondary)' }}>{s.label}</div>
               </motion.div>
             ))}
           </motion.div>
